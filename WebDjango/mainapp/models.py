@@ -9,4 +9,3 @@ class BlogPost(models.Model):
     class Meta:
         ordering = ('-timestamp',)
 
-#admin.site.register(BlogPost)
