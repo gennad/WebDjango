@@ -1,30 +1,23 @@
 from django.conf.urls.defaults import *
-from django.contrib.syndication.views import feed
-from mainapp.views import archive
-from mainapp.feeds import RSSFeed
-#restapi
-from django_restapi_tests.polls.models import Poll, Choice
 from django_restapi.model_resource import Collection
-from django_restapi.responder import XMLResponder
-from django_restapi.authentication import HttpBasicAuthentication, HttpDigestAuthentication
+from django_restapi.responder import *
+from django_restapi.authentication import *
+from django_restapi_tests.polls.models import Poll
 
-#collections for restapi
-simple_poll_resource = Collection(
-    queryset = Poll.objects.all(), 
-    responder = XMLResponder(),
-)
-simple_choice_resource = Collection(
-    queryset = Choice.objects.all(),
-    responder = XMLResponder()
-)
+# HTTP Basic
+#
+# No auth function specified
+# -> django.contrib.auth.models.User is used.
+# Test with username 'rest', password 'rest'.
 
-#auth
 basicauth_poll_resource = Collection(
     queryset = Poll.objects.all(), 
     responder = XMLResponder(),
     authentication = HttpBasicAuthentication()
 )
+
 # HTTP Digest
+
 def digest_authfunc(username, realm):
     """
     Exemplary authfunc for HTTP Digest. In production situations,
@@ -36,6 +29,7 @@ def digest_authfunc(username, realm):
         ('realm2', 'jim') : '5bae77fe607e161b831c8f8026a2ceb2'   # Password: jimspass
     }
     return hashes[(username, realm)]
+
 digestauth_poll_resource = Collection(
     queryset = Poll.objects.all(),
     responder = XMLResponder(),
@@ -43,10 +37,6 @@ digestauth_poll_resource = Collection(
 )
 
 urlpatterns = patterns('',
-    url(r'^$', archive),
-    url(r'^feeds/(?P<url>.*)/$', feed, {'feed_dict': {'rss': RSSFeed}}),
-    url(r'^api/poll/(.*?)/?$', simple_poll_resource),
-    url(r'^api/choice/(.*?)/?$', simple_choice_resource),
-    url(r'^basic/polls/(.*?)/?$', basicauth_poll_resource),
-    url(r'^digest/polls/(.*?)/?$', digestauth_poll_resource),
+   url(r'^basic/polls/(.*?)/?$', basicauth_poll_resource),
+   url(r'^digest/polls/(.*?)/?$', digestauth_poll_resource)
 )

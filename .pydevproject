@@ -6,7 +6,7 @@
 <pydev_property name="org.python.pydev.PYTHON_PROJECT_VERSION">python 2.5</pydev_property>
 <pydev_variables_property name="org.python.pydev.PROJECT_VARIABLE_SUBSTITUTION">
 <key>DJANGO_MANAGE_LOCATION</key>
-<value>src/WebDjango/manage.py</value>
+<value>WebDjango/manage.py</value>
 </pydev_variables_property>
 <pydev_pathproperty name="org.python.pydev.PROJECT_SOURCE_PATH">
 <path>/WebDjango/src</path>
@@ -14,6 +14,7 @@
 <path>/WebDjango/lib/MySQL_python-1.2.2-py2.5-win32.egg</path>
 </pydev_pathproperty>
 <pydev_pathproperty name="org.python.pydev.PROJECT_EXTERNAL_SOURCE_PATH">
-<path>C:\Users\gennad\djangorestinterface\exported</path>
+<path>C:\Users\gennad\djangorestinterface\exported\django_restapi</path>
+<path>C:\Users\gennad\djangorestinterface\exported\django_restapi_tests</path>
 </pydev_pathproperty>
 </pydev_project>
