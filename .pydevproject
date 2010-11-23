@@ -9,9 +9,8 @@
 <value>WebDjango/manage.py</value>
 </pydev_variables_property>
 <pydev_pathproperty name="org.python.pydev.PROJECT_SOURCE_PATH">
-<path>/WebDjango/src</path>
-<path>/WebDjango/src/WebDjango/MainApp</path>
 <path>/WebDjango/lib/MySQL_python-1.2.2-py2.5-win32.egg</path>
+<path>/WebDjango/WebDjango</path>
 </pydev_pathproperty>
 <pydev_pathproperty name="org.python.pydev.PROJECT_EXTERNAL_SOURCE_PATH">
 <path>C:\Users\gennad\djangorestinterface\exported\django_restapi</path>
