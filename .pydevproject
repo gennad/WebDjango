@@ -13,4 +13,7 @@
 <path>/WebDjango/src/WebDjango/MainApp</path>
 <path>/WebDjango/lib/MySQL_python-1.2.2-py2.5-win32.egg</path>
 </pydev_pathproperty>
+<pydev_pathproperty name="org.python.pydev.PROJECT_EXTERNAL_SOURCE_PATH">
+<path>C:\Users\gennad\djangorestinterface\exported</path>
+</pydev_pathproperty>
 </pydev_project>
